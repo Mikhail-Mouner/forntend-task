@@ -11,7 +11,14 @@
                 </div><!--end col-->
             </div><!--end row-->
 
-            <div class="row">
+            <nav>
+                <h4>
+                    <router-link :to="{ name: 'home' }" class="btn btn-outline-primary radius-15">Home</router-link>
+                    <router-link :to="{ name: 'stories' }"  class="btn btn-outline-primary radius-15">Stories</router-link>
+                </h4>
+            </nav>
+
+            <div class="row mb-4">
                 <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2" v-for="feature in features">
                     <div class="card service-wrapper rounded border-0 shadow p-4">
                         <div class="icon text-center text-custom h1 shadow rounded bg-white">
@@ -36,6 +43,36 @@
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
+
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="section-title text-center mb-4 pb-2">
+                        <h4 class="title mb-4">Our Team Members</h4>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+            <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
+                <!--start team members-->
+                <div class="col" v-for="member in teamMembers">
+                    <div class="card radius-15">
+                        <div class="card-body text-center">
+                            <div class="p-4 border radius-15">
+                                <img :src="member.avatar" width="110" height="110" class="rounded-circle shadow" :alt="member.name">
+                                <h5 class="mb-0 mt-5">{{ member.name }}</h5>
+                                <p class="mb-3">{{ member.title }}</p>
+                                <div class="list-inline contacts-social mt-3 mb-3"> <a href="javascript:;" class="list-inline-item bg-facebook text-white border-0"><i class="bx bxl-facebook"></i></a>
+                                    <a href="javascript:;" class="list-inline-item bg-twitter text-white border-0"><i class="bx bxl-twitter"></i></a>
+                                    <a href="javascript:;" class="list-inline-item bg-linkedin text-white border-0"><i class="bx bxl-linkedin"></i></a>
+                                </div>
+                                <div class="d-grid"> <a href="#" class="btn btn-outline-primary radius-15">Contact Me</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end team members-->
+            </div>
         </div>
 
     </div>
@@ -44,7 +81,8 @@
 export default {
     data() {
         return {
-            features: []
+            features: [],
+            teamMembers: [],
         }
     },
     methods: {
@@ -52,6 +90,7 @@ export default {
             axios.get('/api/features').then(res => {
                 if (res.data.success === true)
                     this.features = res.data.features
+                    this.teamMembers = res.data.teamMembers
             }).catch(err => {
                 console.log(err)
             })

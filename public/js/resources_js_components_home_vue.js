@@ -53,10 +53,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      features: []
+      features: [],
+      teamMembers: []
     };
   },
   methods: {
@@ -65,6 +103,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('/api/features').then(function (res) {
         if (res.data.success === true) _this.features = res.data.features;
+        _this.teamMembers = res.data.teamMembers;
       })["catch"](function (err) {
         console.log(err);
       });
@@ -93,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-fa6affac] {\n    margin-top: 20px;\n    background: #eee;\n}\n.service-container[data-v-fa6affac] {\n    transition: all 0.5s ease;\n}\n.service-container .icon[data-v-fa6affac] {\n    margin-top: 5%;\n    font-size: 38px;\n    transition: all 0.5s ease;\n}\n.service-container .number-icon .icon-2[data-v-fa6affac] {\n    height: 70px;\n    width: 70px;\n    line-height: 80px;\n    border-radius: 64% 36% 55% 45% / 76% 72% 28% 24% !important;\n    border-color: #f89d36 !important;\n    transition: all 0.5s ease;\n}\n.service-container .number-icon .icon-2 i[data-v-fa6affac] {\n    font-size: 30px;\n}\n.service-container .number-icon .number[data-v-fa6affac] {\n    position: absolute;\n    top: 0;\n    right: 70px;\n    left: 0;\n    height: 35px;\n    width: 35px;\n    margin: 0 auto;\n    transition: all 0.5s ease;\n}\n.service-container .number-icon .number span[data-v-fa6affac] {\n    line-height: 30px;\n}\n.service-container .content .number[data-v-fa6affac] {\n    font-size: 40px;\n    color: #dee2e6;\n}\n.service-container .content .title[data-v-fa6affac] {\n    transition: all 0.5s ease;\n}\n.service-container.hover-bg[data-v-fa6affac] {\n    transition: all 0.5s ease;\n}\n.service-container.hover-bg .smooth-icon[data-v-fa6affac] {\n    position: absolute;\n    bottom: -40px;\n    right: -20px;\n    font-size: 60px;\n    color: #f8f9fa;\n    transition: all 0.8s ease;\n}\n.service-container.hover-bg[data-v-fa6affac]:hover {\n    background-color: #f89d36;\n}\n.service-container.hover-bg:hover .content .title[data-v-fa6affac] {\n    color: #ffffff !important;\n}\n.service-container.hover-bg:hover .content .serv-pera[data-v-fa6affac] {\n    color: #fafafb !important;\n}\n.service-container.hover-bg:hover .smooth-icon[data-v-fa6affac] {\n    font-size: 100px;\n    opacity: 0.2;\n    bottom: -20px;\n    right: 10px;\n}\n.service-container[data-v-fa6affac]:hover {\n    background-color: #ffffff;\n    box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;\n}\n.service-container:hover .icon[data-v-fa6affac] {\n    color: #f89d36;\n    -webkit-animation: mover-data-v-fa6affac 1s infinite alternate;\n    animation: mover-data-v-fa6affac 1s infinite alternate;\n}\n.service-container:hover .number-icon .icon-2[data-v-fa6affac] {\n    background-color: #f89d36;\n    border-radius: 50% !important;\n}\n.service-container:hover .number-icon .icon-2 i[data-v-fa6affac] {\n    color: #ffffff !important;\n}\n.service-container:hover .number-icon .number[data-v-fa6affac] {\n    color: #ffffff;\n    background: #f89d36 !important;\n    border-color: #ffffff !important;\n}\n.service-container:hover .content .title[data-v-fa6affac] {\n    color: #f89d36;\n}\n.service-container a[data-v-fa6affac]:hover,\n.service-container a .title[data-v-fa6affac]:hover {\n    color: #f89d36 !important;\n}\n@-webkit-keyframes mover-data-v-fa6affac {\n0% {\n        transform: translateY(0);\n}\n100% {\n        transform: translateY(-15px);\n}\n}\n@keyframes mover-data-v-fa6affac {\n0% {\n        transform: translateY(0);\n}\n100% {\n        transform: translateY(-15px);\n}\n}\n.service-wrapper[data-v-fa6affac] {\n    transition: all 0.5s ease;\n}\n.service-wrapper .icon[data-v-fa6affac] {\n    width: 60px;\n    height: 60px;\n    line-height: 45px;\n    transition: all 0.5s ease;\n}\n.service-wrapper .content .title[data-v-fa6affac] {\n    transition: all 0.5s ease;\n    font-weight: 500;\n}\n.service-wrapper .big-icon[data-v-fa6affac] {\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    opacity: 0.05;\n    transition: all 0.5s ease;\n}\n.service-wrapper[data-v-fa6affac]:hover {\n    box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;\n    background: #ffffff;\n    transform: translateY(-8px);\n    border-color: transparent !important;\n}\n.service-wrapper:hover .icon[data-v-fa6affac] {\n    background: #0062ff !important;\n    color: #ffffff !important;\n}\n.service-wrapper:hover .big-icon[data-v-fa6affac] {\n    z-index: -1;\n    opacity: 0.1;\n    font-size: 160px;\n}\n.text-custom[data-v-fa6affac] {\n    color: #0062ff !important;\n}\n.uim-svg[data-v-fa6affac] {\n    display: inline-block;\n    height: 1em;\n    vertical-align: -0.125em;\n    font-size: inherit;\n    fill: var(--uim-color, currentColor);\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody[data-v-fa6affac] {\r\n    margin-top: 20px;\r\n    background: #eee;\n}\n.service-container[data-v-fa6affac] {\r\n    transition: all 0.5s ease;\n}\n.service-container .icon[data-v-fa6affac] {\r\n    margin-top: 5%;\r\n    font-size: 38px;\r\n    transition: all 0.5s ease;\n}\n.service-container .number-icon .icon-2[data-v-fa6affac] {\r\n    height: 70px;\r\n    width: 70px;\r\n    line-height: 80px;\r\n    border-radius: 64% 36% 55% 45% / 76% 72% 28% 24% !important;\r\n    border-color: #f89d36 !important;\r\n    transition: all 0.5s ease;\n}\n.service-container .number-icon .icon-2 i[data-v-fa6affac] {\r\n    font-size: 30px;\n}\n.service-container .number-icon .number[data-v-fa6affac] {\r\n    position: absolute;\r\n    top: 0;\r\n    right: 70px;\r\n    left: 0;\r\n    height: 35px;\r\n    width: 35px;\r\n    margin: 0 auto;\r\n    transition: all 0.5s ease;\n}\n.service-container .number-icon .number span[data-v-fa6affac] {\r\n    line-height: 30px;\n}\n.service-container .content .number[data-v-fa6affac] {\r\n    font-size: 40px;\r\n    color: #dee2e6;\n}\n.service-container .content .title[data-v-fa6affac] {\r\n    transition: all 0.5s ease;\n}\n.service-container.hover-bg[data-v-fa6affac] {\r\n    transition: all 0.5s ease;\n}\n.service-container.hover-bg .smooth-icon[data-v-fa6affac] {\r\n    position: absolute;\r\n    bottom: -40px;\r\n    right: -20px;\r\n    font-size: 60px;\r\n    color: #f8f9fa;\r\n    transition: all 0.8s ease;\n}\n.service-container.hover-bg[data-v-fa6affac]:hover {\r\n    background-color: #f89d36;\n}\n.service-container.hover-bg:hover .content .title[data-v-fa6affac] {\r\n    color: #ffffff !important;\n}\n.service-container.hover-bg:hover .content .serv-pera[data-v-fa6affac] {\r\n    color: #fafafb !important;\n}\n.service-container.hover-bg:hover .smooth-icon[data-v-fa6affac] {\r\n    font-size: 100px;\r\n    opacity: 0.2;\r\n    bottom: -20px;\r\n    right: 10px;\n}\n.service-container[data-v-fa6affac]:hover {\r\n    background-color: #ffffff;\r\n    box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;\n}\n.service-container:hover .icon[data-v-fa6affac] {\r\n    color: #f89d36;\r\n    -webkit-animation: mover-data-v-fa6affac 1s infinite alternate;\r\n    animation: mover-data-v-fa6affac 1s infinite alternate;\n}\n.service-container:hover .number-icon .icon-2[data-v-fa6affac] {\r\n    background-color: #f89d36;\r\n    border-radius: 50% !important;\n}\n.service-container:hover .number-icon .icon-2 i[data-v-fa6affac] {\r\n    color: #ffffff !important;\n}\n.service-container:hover .number-icon .number[data-v-fa6affac] {\r\n    color: #ffffff;\r\n    background: #f89d36 !important;\r\n    border-color: #ffffff !important;\n}\n.service-container:hover .content .title[data-v-fa6affac] {\r\n    color: #f89d36;\n}\n.service-container a[data-v-fa6affac]:hover,\r\n.service-container a .title[data-v-fa6affac]:hover {\r\n    color: #f89d36 !important;\n}\n@-webkit-keyframes mover-data-v-fa6affac {\n0% {\r\n        transform: translateY(0);\n}\n100% {\r\n        transform: translateY(-15px);\n}\n}\n@keyframes mover-data-v-fa6affac {\n0% {\r\n        transform: translateY(0);\n}\n100% {\r\n        transform: translateY(-15px);\n}\n}\n.service-wrapper[data-v-fa6affac] {\r\n    transition: all 0.5s ease;\n}\n.service-wrapper .icon[data-v-fa6affac] {\r\n    width: 60px;\r\n    height: 60px;\r\n    line-height: 45px;\r\n    transition: all 0.5s ease;\n}\n.service-wrapper .content .title[data-v-fa6affac] {\r\n    transition: all 0.5s ease;\r\n    font-weight: 500;\n}\n.service-wrapper .big-icon[data-v-fa6affac] {\r\n    position: absolute;\r\n    right: 0;\r\n    bottom: 0;\r\n    opacity: 0.05;\r\n    transition: all 0.5s ease;\n}\n.service-wrapper[data-v-fa6affac]:hover {\r\n    box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;\r\n    background: #ffffff;\r\n    transform: translateY(-8px);\r\n    border-color: transparent !important;\n}\n.service-wrapper:hover .icon[data-v-fa6affac] {\r\n    background: #0062ff !important;\r\n    color: #ffffff !important;\n}\n.service-wrapper:hover .big-icon[data-v-fa6affac] {\r\n    z-index: -1;\r\n    opacity: 0.1;\r\n    font-size: 160px;\n}\n.text-custom[data-v-fa6affac] {\r\n    color: #0062ff !important;\n}\n.uim-svg[data-v-fa6affac] {\r\n    display: inline-block;\r\n    height: 1em;\r\n    vertical-align: -0.125em;\r\n    font-size: inherit;\r\n    fill: var(--uim-color, currentColor);\n}\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -584,9 +623,35 @@ var render = function () {
     _c("div", { staticClass: "container" }, [
       _vm._m(0),
       _vm._v(" "),
+      _c("nav", [
+        _c(
+          "h4",
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-outline-primary radius-15",
+                attrs: { to: { name: "home" } },
+              },
+              [_vm._v("Home")]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-outline-primary radius-15",
+                attrs: { to: { name: "stories" } },
+              },
+              [_vm._v("Stories")]
+            ),
+          ],
+          1
+        ),
+      ]),
+      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "row mb-4" },
         _vm._l(_vm.features, function (feature) {
           return _c(
             "div",
@@ -680,6 +745,45 @@ var render = function () {
         }),
         0
       ),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row row-cols-1 row-cols-lg-2 row-cols-xl-4" },
+        _vm._l(_vm.teamMembers, function (member) {
+          return _c("div", { staticClass: "col" }, [
+            _c("div", { staticClass: "card radius-15" }, [
+              _c("div", { staticClass: "card-body text-center" }, [
+                _c("div", { staticClass: "p-4 border radius-15" }, [
+                  _c("img", {
+                    staticClass: "rounded-circle shadow",
+                    attrs: {
+                      src: member.avatar,
+                      width: "110",
+                      height: "110",
+                      alt: member.name,
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "mb-0 mt-5" }, [
+                    _vm._v(_vm._s(member.name)),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "mb-3" }, [
+                    _vm._v(_vm._s(member.title)),
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2, true),
+                  _vm._v(" "),
+                  _vm._m(3, true),
+                ]),
+              ]),
+            ]),
+          ])
+        }),
+        0
+      ),
     ]),
   ])
 }
@@ -700,6 +804,66 @@ var staticRenderFns = [
           ]),
         ]),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "section-title text-center mb-4 pb-2" }, [
+          _c("h4", { staticClass: "title mb-4" }, [_vm._v("Our Team Members")]),
+        ]),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "list-inline contacts-social mt-3 mb-3" }, [
+      _c(
+        "a",
+        {
+          staticClass: "list-inline-item bg-facebook text-white border-0",
+          attrs: { href: "javascript:;" },
+        },
+        [_c("i", { staticClass: "bx bxl-facebook" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "list-inline-item bg-twitter text-white border-0",
+          attrs: { href: "javascript:;" },
+        },
+        [_c("i", { staticClass: "bx bxl-twitter" })]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "list-inline-item bg-linkedin text-white border-0",
+          attrs: { href: "javascript:;" },
+        },
+        [_c("i", { staticClass: "bx bxl-linkedin" })]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-grid" }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-outline-primary radius-15",
+          attrs: { href: "#" },
+        },
+        [_vm._v("Contact Me")]
+      ),
     ])
   },
 ]
