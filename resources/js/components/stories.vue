@@ -13,8 +13,8 @@
 
             <nav>
                 <h4>
-                    <router-link :to="{ name: 'home' }" class="btn btn-outline-primary radius-15">Home</router-link>
-                    <router-link :to="{ name: 'stories' }"  class="btn btn-outline-primary radius-15">Stories</router-link>
+                    <router-link :to="{ name: 'home' }" class="btn btn-outline-primary radius-15" exact-active>Home</router-link>
+                    <router-link :to="{ name: 'stories' }"  class="btn btn-outline-primary radius-15" exact-active>Stories</router-link>
                 </h4>
             </nav>
 
