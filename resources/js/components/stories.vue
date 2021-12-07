@@ -1,22 +1,8 @@
 <template>
     <div>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="section-title text-center mb-4 pb-2">
-                        <h4 class="title mb-4">Our Features</h4>
-                        <p class="text-muted para-desc mx-auto mb-0">There is now an abundance of readable dummy texts.
-                            These are usually used when a text is required purely to fill a space.</p>
-                    </div>
-                </div><!--end col-->
-            </div><!--end row-->
 
-            <nav>
-                <h4>
-                    <router-link :to="{ name: 'home' }" class="btn btn-outline-primary radius-15" exact-active>Home</router-link>
-                    <router-link :to="{ name: 'stories' }"  class="btn btn-outline-primary radius-15" exact-active>Stories</router-link>
-                </h4>
-            </nav>
+            <navbar ></navbar>
 
             <div class="row">
                 <div class="col-lg-4 layout-spacing">
@@ -80,6 +66,7 @@
     </div>
 </template>
 <script>
+import navbar from './navbar.vue';
 export default {
     data() {
         return {
@@ -87,6 +74,7 @@ export default {
             members: [],
         }
     },
+    components: { navbar },
     methods: {
         getMemebersList() {
             axios.get('/api/stories').then(res => {
