@@ -12,7 +12,7 @@ git clone https://github.com/Mikhail-Mouner/forntend-task.git
 ```
 
 ```sh
-cp .env.exapmle .env
+cp .env.example .env
 ```
 
 ```sh
