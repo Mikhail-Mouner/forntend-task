@@ -5,29 +5,9 @@
             <navbar></navbar>
 
             <div class="row mb-4">
-                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2" v-for="feature in features">
-                    <div class="card service-wrapper rounded border-0 shadow p-4">
-                        <div class="icon text-center text-custom h1 shadow rounded bg-white">
-                            <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                width="1em"><path class="uim-primary"
-                                                                                  d="M12,6a.99974.99974,0,0,1,1,1v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12V7A.99974.99974,0,0,1,12,6Z"></path><path
-                                class="uim-tertiary"
-                                d="M2,12A10,10,0,1,0,12,2,10,10,0,0,0,2,12Zm9-5a1,1,0,0,1,2,0v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12Z"></path></svg></span>
-                        </div>
-                        <div class="content mt-4">
-                            <h5 class="title">{{ feature.name }}</h5>
-                            <p class="text-muted mt-3 mb-0">{{ feature.description }}</p>
-
-                        </div>
-                        <div class="big-icon h1 text-custom">
-                            <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                                width="1em"><path class="uim-primary"
-                                                                                  d="M12,6a.99974.99974,0,0,1,1,1v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12V7A.99974.99974,0,0,1,12,6Z"></path><path
-                                class="uim-tertiary"
-                                d="M2,12A10,10,0,1,0,12,2,10,10,0,0,0,2,12Zm9-5a1,1,0,0,1,2,0v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12Z"></path></svg></span>
-                        </div>
-                    </div>
-                </div><!--end col-->
+                <!--start feature-->
+                <feature v-for="(feature, index) in features" :key="index" :feature="feature"></feature>
+                <!--end feature-->
             </div><!--end row-->
 
 
@@ -40,23 +20,7 @@
             </div><!--end row-->
             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
                 <!--start team members-->
-                <div class="col" v-for="member in teamMembers">
-                    <div class="card radius-15">
-                        <div class="card-body text-center">
-                            <div class="p-4 border radius-15">
-                                <img :src="member.avatar" width="110" height="110" class="rounded-circle shadow" :alt="member.name">
-                                <h5 class="mb-0 mt-5">{{ member.name }}</h5>
-                                <p class="mb-3">{{ member.title }}</p>
-                                <div class="list-inline contacts-social mt-3 mb-3"> <a href="javascript:;" class="list-inline-item bg-facebook text-white border-0"><i class="bx bxl-facebook"></i></a>
-                                    <a href="javascript:;" class="list-inline-item bg-twitter text-white border-0"><i class="bx bxl-twitter"></i></a>
-                                    <a href="javascript:;" class="list-inline-item bg-linkedin text-white border-0"><i class="bx bxl-linkedin"></i></a>
-                                </div>
-                                <div class="d-grid"> <a href="#" class="btn btn-outline-primary radius-15">Contact Me</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <single-member v-for="(member, index) in teamMembers" :key="index" :member="member"></single-member>
                 <!--end team members-->
             </div>
         </div>
@@ -64,7 +28,9 @@
     </div>
 </template>
 <script>
-import navbar from './navbar.vue';
+import navbar from './assets/navbar.vue';
+import feature from './assets/feature.vue';
+import SingleMember from './assets/SingleMember.vue';
 export default {
     data() {
         return {
@@ -72,7 +38,7 @@ export default {
             teamMembers: [],
         }
     },
-    components: { navbar },
+    components: {navbar, feature,SingleMember},
     methods: {
         getFeaturesList() {
             axios.get('/api/features').then(res => {
@@ -90,7 +56,7 @@ export default {
     }
 };
 </script>
-<style scoped>
+<style lang="scss">
 body {
     margin-top: 20px;
     background: #eee;

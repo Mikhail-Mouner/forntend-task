@@ -19,37 +19,15 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div id="content_2" class="tabcontent">
                                         <div class="story-container-2">
-                                            <div class="single-story">
-                                                <div class="story-dp">
-                                                    <img :src="user.avatar">
-                                                    <img src="https://bootdey.com/assets/img/plus.png" class="add-story">
-                                                </div>
-                                                <div class="story-author">
-                                                    <p class="name">{{ user.name }}</p>
-                                                    <p class="time">Tap to add a story</p>
-                                                </div>
-                                            </div>
+                                            <single-store :member="user" :isCurrentUser="true"></single-store>
+                                            
                                             <p class="divider">Recently Added</p>
-                                            <div class="single-story"  v-for="member in members.recently_added">
-                                                <div class="story-dp unseen">
-                                                    <img :src="member.avatar">
-                                                </div>
-                                                <div class="story-author">
-                                                    <p class="name">{{ member.name }}</p>
-                                                    <p class="time">{{ member.last_activity }}</p>
-                                                </div>
-                                            </div>
-                                            <p class="divider">Viewed Stories</p>
+                                            <single-store v-for="(member,index) in members.recently_added"
+                                                          :key="index" :member="member"></single-store>
 
-                                            <div class="single-story" v-for="member in members.viewed_stories">
-                                                <div class="story-dp seen">
-                                                    <img :src="member.avatar">
-                                                </div>
-                                                <div class="story-author">
-                                                    <p class="name">{{ member.name }}</p>
-                                                    <p class="time">{{ member.last_activity }}</p>
-                                                </div>
-                                            </div>
+                                            <p class="divider">Viewed Stories</p>
+                                            <single-store v-for="(member,index) in members.viewed_stories"
+                                                          :isMemberSeen="true" :key="index" :member="member"></single-store>
 
                                         </div>
                                     </div>
@@ -66,7 +44,8 @@
     </div>
 </template>
 <script>
-import navbar from './navbar.vue';
+    import navbar from './assets/navbar.vue';
+    import singleStore from './assets/singleStore.vue';
 export default {
     data() {
         return {
@@ -74,7 +53,7 @@ export default {
             members: [],
         }
     },
-    components: { navbar },
+    components: {navbar, singleStore},
     methods: {
         getMemebersList() {
             axios.get('/api/stories').then(res => {
@@ -92,7 +71,7 @@ export default {
     }
 };
 </script>
-<style scoped>
+<style lang="scss">
     body{
         background:#eee;
         margin-top:20px;
